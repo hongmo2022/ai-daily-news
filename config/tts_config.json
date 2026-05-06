@@ -1,0 +1,69 @@
+{
+  "_comment": "TTS 引擎配置 - 复制此文件到 config/tts_config.json 后修改。所有路径留空则使用技能相对目录兜底。",
+  "active_engine": "auto",
+  "engines": {
+    "edge-tts": {
+      "enabled": true,
+      "priority": 1,
+      "type": "cloud",
+      "voice": "zh-CN-XiaoyiNeural"
+    },
+    "xiaomi-mimo-tts": {
+      "enabled": false,
+      "priority": 2,
+      "type": "cloud",
+      "voice": "default_zh",
+      "script_path": "",
+      "_comment_path": "填写 xiaomi-mimo-tts 技能中 tts.py 的绝对路径（外部依赖，需另行安装）"
+    },
+    "qwen3tts": {
+      "enabled": false,
+      "priority": 3,
+      "type": "local",
+      "voice": "小魔",
+      "speak_script": "",
+      "service_url": "http://127.0.0.1:7860",
+      "_comment_path": "填写 Qwen3TTS 的 speak.py 绝对路径（外部依赖，需另行安装）"
+    },
+    "sapi": {
+      "enabled": false,
+      "priority": 4,
+      "type": "local",
+      "voice": "Huihui"
+    }
+  },
+  "fallback_chain": ["edge-tts"],
+  "ffprobe_path": "",
+  "ffmpeg_path": "",
+  "voice_library_dir": "",
+  "_comment_voice_library": "音色库目录（Qwen3TTS 克隆音色用），留空则不启用",
+  "output_base_dir": "",
+  "_comment_output_base": "TTS 音频输出根目录，留空则使用 output/audio/",
+  "system_python": "",
+  "qwen_python": "",
+  "voice_state_file": "",
+  "queue": {
+    "dir": "",
+    "queue_file": "",
+    "lock_file": "",
+    "processing_lock": "",
+    "_comment": "留空则使用 output/queue/ 目录"
+  },
+  "audio_mutex_sources": [
+    {
+      "name": "WorkBuddy",
+      "enabled": false,
+      "playing_file": "",
+      "queue_file": "",
+      "_comment": "WorkBuddy 互斥：填写其 playing.json 和 queue.json 的完整路径（见 WorkBuddy 文档），enabled 设为 true"
+    },
+    {
+      "name": "OpenClaw",
+      "enabled": false,
+      "playing_file": "",
+      "queue_file": "",
+      "_comment": "OpenClaw 互斥：如果有多 agent 语音同时播放冲突，填写其状态文件路径后启用"
+    }
+  ],
+  "_comment_audio_mutex": "audio_mutex_sources 用于多 agent 语音互斥。播报前会检测所有 enabled 源是否在播放，有则等待。不需要则留空或 disabled。"
+}
