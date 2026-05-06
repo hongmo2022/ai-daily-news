@@ -1,0 +1,16 @@
+{
+  "engines": {
+    "edge-tts": {
+      "max_duration_seconds": null,
+      "notes": "支持长音频，无需分段"
+    },
+    "qwen3tts": {
+      "max_duration_seconds": 28,
+      "notes": "单条限制28秒，超过需分段"
+    }
+  },
+  "default": {
+    "max_duration_seconds": null,
+    "notes": "默认不限制，新引擎按需添加"
+  }
+}

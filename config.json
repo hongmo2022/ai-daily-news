@@ -1,0 +1,39 @@
+{
+  "name": "ai-daily-news",
+  "version": "2.0.0",
+  "description": "AI 早报技能 - 每日 AI 新闻聚合、分类与语音播报",
+  "author": "ai-daily-news contributors",
+  "license": "MIT",
+  "schedule": "30 9 * * *",
+  "env": {},
+  "config": {
+    "output_dir": "output",
+    "target_items": 15,
+    "max_items": 20,
+    "categories": [
+      "模型发布",
+      "产品应用",
+      "开发生态",
+      "资本动态",
+      "政策法规",
+      "前瞻传闻"
+    ],
+    "time_window_hours": 24
+  },
+  "dependencies": {
+    "pip": [
+      "requests",
+      "feedparser",
+      "beautifulsoup4",
+      "edge-tts",
+      "pygame"
+    ],
+    "optional": {
+      "xiaomi-mimo-tts": "pip install xiaomi-mimo-tts (可选，小米情感语音)",
+      "qwen3-tts": "本地 GPU 克隆音色，需单独安装"
+    },
+    "system": [
+      "ffmpeg (可选，用于音频合成和校验)"
+    ]
+  }
+}

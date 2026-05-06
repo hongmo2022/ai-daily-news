@@ -1,0 +1,73 @@
+{
+  "_comment": "TTS 默认配置模板 — 复制到 config/tts_config.json 后修改",
+  "active_engine": "auto",
+  "engines": {
+    "qwen3tts": {
+      "voice": "小魔",
+      "output_dir": "",
+      "service_url": "http://localhost:7860",
+      "_comment_output_dir": "留空则使用 output/audio/qwen3tts",
+      "tags": ["clone", "emotion", "local"],
+      "features": {
+        "emotion": true,
+        "clone": true,
+        "dialect": true,
+        "singing": true
+      }
+    },
+    "edge-tts": {
+      "name": "Microsoft Edge TTS",
+      "engine": "edge-tts",
+      "voice": "zh-CN-XiaoyiNeural",
+      "output_dir": "",
+      "_comment_output_dir": "留空则使用 output/audio/edge-tts",
+      "enabled": true,
+      "tags": ["cloud", "stable"],
+      "features": {
+        "emotion": false,
+        "clone": false,
+        "dialect": false,
+        "singing": false
+      }
+    },
+    "xiaomi-mimo-tts": {
+      "name": "小米 MiMo TTS",
+      "voice": "default_zh",
+      "output_dir": "",
+      "_comment_output_dir": "留空则使用 output/audio/mimo",
+      "enabled": true,
+      "tags": ["cloud", "emotion", "dialect"],
+      "features": {
+        "emotion": true,
+        "clone": false,
+        "dialect": true,
+        "singing": true
+      }
+    }
+  },
+  "last_updated": "2026-05-04",
+  "voice_library_dir": "",
+  "_comment_voice_library": "音色库目录（Qwen3TTS 克隆音色用），例如 G:/AI/voice-library",
+  "output_base_dir": "",
+  "_comment_output_base": "TTS 音频输出根目录，留空则使用 output/audio/",
+  "system_python": "",
+  "_comment_system_python": "系统 Python 解释器路径，留空则使用当前 Python",
+  "qwen_python": "",
+  "_comment_qwen_python": "Qwen3TTS 专用 Python（如使用嵌入版），留空则使用当前 Python",
+  "voice_state_file": "",
+  "_comment_voice_state": "音色轮换状态文件，留空则使用 data/voice_rotation.json",
+  "ffprobe_path": "",
+  "ffmpeg_path": "",
+  "queue": {
+    "dir": "",
+    "queue_file": "",
+    "lock_file": "",
+    "processing_lock": "",
+    "_comment": "留空则使用 output/queue/ 目录"
+  },
+  "workbuddy": {
+    "playing_file": "",
+    "queue_file": "",
+    "_comment": "WorkBuddy 互斥检测（外部系统），留空则不启用"
+  }
+}

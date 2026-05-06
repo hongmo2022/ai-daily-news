@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+
+# 环境变量（含密钥）
+.env
+
+# 输出文件（运行时生成）
+output/
+run_log.txt
+run_done.flag
+run_failed.flag
+collection_log.txt
+*.flag
+
+# 备份文件
+*.bak*
+*.PREVIEW
+
+# IDE
+.vscode/
+.idea/
